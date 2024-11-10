@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import {Header} from "@/components/header";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const myFont = localFont({
+  src: [
+    {
+      path: "./fonts/SFPRODISPLAYREGULAR.woff",
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: "./fonts/SFPRODISPLAYMEDIUM.woff",
+      weight: '500',
+      style: 'italic',
+    },
+    {
+      path: "./fonts/SFPRODISPLAYBOLD.woff",
+      weight: '700',
+      style: 'normal',
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -24,12 +34,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+      <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={myFont.className}
       >
+      <div className="flex flex-col text-black bg-white">
+          <Header/>
         {children}
+      </div>
       </body>
-    </html>
+      </html>
   );
 }
