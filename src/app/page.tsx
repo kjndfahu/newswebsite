@@ -20,7 +20,7 @@ export default function Home() {
     const [data, setData] = useState<string[]>([]);
     const [inputValue, setInputValue] = useState<string>("");
     const [storage, setStorage] = useState(0);
-    const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc'); // State for sorting
+    const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
     useEffect(() => {
         const savedArticles = localStorage.getItem("selectedCategories");
@@ -42,7 +42,6 @@ export default function Home() {
             },
         })
             .then((response) => {
-                // Sort articles by createdAt after fetching
                 const sortedArticles = response.data.sort((a: NewsArticle, b: NewsArticle) => {
                     const dateA = new Date(a.createdAt).getTime();
                     const dateB = new Date(b.createdAt).getTime();
@@ -54,7 +53,7 @@ export default function Home() {
             .catch((error) => {
                 console.error("Error fetching articles:", error);
             });
-    }, [data, inputValue, sortOrder]); // Add sortOrder to dependencies
+    }, [data, inputValue, sortOrder]);
 
     const categoryMap: { [key: string]: string } = {
         Спорт: "SPORT",

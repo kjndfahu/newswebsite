@@ -8,7 +8,7 @@ interface Props {
     setData: React.Dispatch<React.SetStateAction<string[]>>;
     data: string[];
     sortOrder:any;
-    setSortOrder: React.Dispatch<React.SetStateAction<'asc' | 'desc'>>; // Added setSortOrder prop
+    setSortOrder: React.Dispatch<React.SetStateAction<'asc' | 'desc'>>;
 }
 
 export const HeaderFilters: React.FC<Props> = ({ data,sortOrder, setData, setSortOrder }) => {

@@ -6,7 +6,7 @@ import debounce from 'lodash.debounce';
 interface Props {
     className?: string;
     inputValue: string;
-    setInputValue: (value: string) => void;  // Update the type to be more specific
+    setInputValue: (value: string) => void;
 }
 
 export const SearchBar: React.FC<Props> = ({ inputValue, setInputValue, className }) => {

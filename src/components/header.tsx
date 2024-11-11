@@ -8,7 +8,7 @@ interface Props {
     inputValue: string;
     setInputValue: React.Dispatch<React.SetStateAction<string>>;
     sortOrder:any;
-    setSortOrder: React.Dispatch<React.SetStateAction<'asc' | 'desc'>>; // Add setSortOrder here
+    setSortOrder: React.Dispatch<React.SetStateAction<'asc' | 'desc'>>;
 }
 
 export const Header: React.FC<Props> = ({ setData, data, sortOrder, inputValue, setInputValue, className, setSortOrder }) => {
