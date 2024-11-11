@@ -39,7 +39,6 @@ export default function RootLayout({
           className={myFont.className}
       >
       <div className="flex flex-col text-black bg-white">
-          <Header/>
         {children}
       </div>
       </body>
